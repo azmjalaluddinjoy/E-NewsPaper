@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+   {% block content %}
+       <h1> {{name}}</h1>
+{#      {% for newsSpecific in specify %}#}
+          <h1>{{ name }}</h1>
+           {% if newsSpecific.news != None %}
+            <img src="{{ newsSpecific.news.url }}" width="300">
+           {% endif %}
+{#      {% endfor %}#}
+   {% endblock %}

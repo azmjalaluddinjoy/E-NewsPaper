@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Login</title>
+</head>
+<body>
+{% extends 'base.html' %}
+   {% block content %}
+            <div class="container">
+                <div class="col-md-7" style=" position: center;">
+                    <h1>User Login</h1>
+                    <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ loginForm.as_p }}
+{#                        <button type="submit">Submit</button>#}
+                        <input type="submit" class="btn btn-primary" value="Login">
+                    </form>
+
+                </div>
+            </div>
+   {% endblock %}
+</body>
+</html>

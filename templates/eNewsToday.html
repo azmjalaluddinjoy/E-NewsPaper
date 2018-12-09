@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="contdr-fluid text-center">
+        <ul class="pagination">
+
+{#          <li class="previous"><a href="#"><span class="glyphicon glyphicon-arrow-left" ></span> Previous Page</a></li>#}
+          <li class="active"> <a href="?date=10December18&p=page1/">1</a></li>
+{#            <h3><a href="{% url 'date' post.pk %}">{{ post.title }}</a></h3>#}
+          <li><a href="?date=10December18&p=page2/">2</a></li>
+          <li><a href="?date=10December18&p=page3/">3</a></li>
+          <li><a href="?date=10December18&p=page4/">4</a></li>
+          <li><a href="?date=10December18&p=page5/">5</a></li>
+          <li><a href="?date=10December18&p=page6/">6</a></li>
+          <li><a href="?date=10December18&p=page7/">7</a></li>
+          <li><a href="?date=10December18&p=page8/">8</a> </li>
+{#          <li class="next"><a href="#">Next Page <span class="glyphicon glyphicon-arrow-right" ></span></a></li>#}
+        </ul>
+    </div>
+
+{##}
+{#<h1>hello {{name}}</h1>#}
+{#{% for news in singleNews %}#}
+{#    {% if news.category == "education" %}#}
+{#        {{news.category}} <br>#}
+{#            {% if news.news != None %}#}
+{#            <img src="{{ news.news.url }}" width="700">#}
+{#          {% endif %}#}
+{#    {% endif %}#}
+{##}
+{#{% endfor %}#}
+
+{% for news in singleNews %}
+ <div class="modal fade" id="enlargeImageModal" tabindex="-1" role="dialog" aria-labelledby="enlargeImageModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content topmodel">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body">
+          <img src="" class="enlargeImageModalSource" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+</div>
+
+    <script>
+    $(function() {
+    	$('.joy').on('click', function() {
+			$('.enlargeImageModalSource').attr('src', $(this).attr('src'));
+			$('#enlargeImageModal').modal('show');
+		});
+        });
+    </script>
+
+    <div class="row topimg">
+
+    <div>
+        <div class="col-md-12">
+          {% if news.position == "r0c0" %}
+              {% if news.pageNumber == "page1" %}
+                  {% if news.news != None %}
+                  <img class="joy" src="{{ news.news.url }}" width="770">
+              {% endif %}
+                  {% endif %}
+
+          {% endif %}
+        </div>
+    </div>
+    </div>
+
+    <div class="row allimg">
+
+    <div>
+        <div class="col-sm-4">
+          {% if news.position == "r1c1" %}
+{#              {% if news.news != None %}#}
+                    <img class="joy" src="{{ news.news.url }}" width="300">
+{#              {% endif %}#}
+          {% endif %}
+        </div>
+        <div class="col-sm-4">
+        {% if news.position == "r1c2" %}
+{#          {% if news.news != None %}#}
+            <img class="joy" src="{{ news.news.url }}" width="300">
+{#          {% endif %}#}
+         {% endif %}
+        </div>
+        <div class="col-sm-4">
+          {% if news.position == "r1c3" %}
+              {% if news.news != None %}
+                    <img class="joy" src="{{ news.news.url }}" width="300">
+              {% endif %}
+          {% endif %}
+
+        </div>
+    </div>
+
+        <div>
+        <div class="col-sm-4">
+          {% if news.position == "r2c1" %}
+              {% if news.news != None %}
+                    <img class="joy" src="{{ news.news.url }}" width="300">
+              {% endif %}
+          {% endif %}
+
+        </div>
+
+        <div class="col-sm-4">
+
+          {% if news.position == "r2c2" %}
+              {% if news.news != None %}
+                    <img class="joy" src="{{ news.news.url }}" width="300">
+              {% endif %}
+          {% endif %}
+
+        </div>
+
+        <div class="col-sm-4">
+          {% if news.position == "r2c3" %}
+              {% if news.news != None %}
+                    <img class="joy" src="{{ news.news.url }}" width="300">
+              {% endif %}
+          {% endif %}
+
+        </div>
+    </div>
+
+
+        <div>
+        <div class="col-sm-4">
+          {% if news.position == "r3c1" %}
+              {% if news.news != None %}
+                    <img class="joy" src="{{ news.news.url }}" width="300">
+              {% endif %}
+          {% endif %}
+
+        </div>
+
+        <div class="col-sm-4">
+
+          {% if news.position == "r3c2" %}
+              {% if news.news != None %}
+                    <img class="joy" src="{{ news.news.url }}" width="300">
+              {% endif %}
+          {% endif %}
+
+        </div>
+
+        <div class="col-sm-4">
+          {% if news.position == "r3c3" %}
+              {% if news.news != None %}
+                    <img class="joy" src="{{ news.news.url }}" width="300">
+              {% endif %}
+          {% endif %}
+
+        </div>
+    </div>
+
+    </div>
+
+
+    {% endfor %}
+{% endblock %}
+
+
+{#THis content is for Right sideBar#}
+
+{% block sideBar %}
+    {% for eNewsView in eachNews %}
+        <p><span class="glyphicon glyphicon-backward"></span> All Pages <span class="glyphicon glyphicon-forward"></span></p>
+                <img src="{{ eNewsView.position3.url }}" width="120">
+        <p> Page 1</p>
+                <img src="{{ eNewsView.position3.url }}" width="120">
+        <p> Page 2</p>
+                        <img src="{{ eNewsView.position3.url }}" width="120">
+        <p> Page 3</p>
+                        <img src="{{ eNewsView.position3.url }}" width="120">
+        <p> Page 4</p>
+                        <img src="{{ eNewsView.position3.url }}" width="120">
+        <p> Page 5</p>
+                        <img src="{{ eNewsView.position3.url }}" width="120">
+        <p> Page 6</p>
+                        <img src="{{ eNewsView.position3.url }}" width="120">
+        <p> Page 7</p>
+                        <img src="{{ eNewsView.position3.url }}" width="120">
+        <p> Page 8</p>
+    {% endfor %}
+{% endblock %}
+

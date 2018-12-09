@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+   {% block content %}
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.description }}</p>
+       {% if post.image != None %}
+            <img src="{{ post.image.url }}" width="650">
+       {% endif %}
+   {% endblock %}

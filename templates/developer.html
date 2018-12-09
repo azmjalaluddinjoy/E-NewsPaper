@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>
+        Developer SoftTech Bangladesh
+    </title>
+    <style>
+p.double {border-style: double; width: 310px; position: center}
+        body{
+            position: center;
+        }
+         .joy {
+   width: 300px;
+   border:1px green;
+   position:center;
+ }
+    </style>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for devInfo in devInfo %}
+
+        {% if devInfo.photo != None %}
+            <p class="double">
+            <img class="joy" src="{{ devInfo.photo.url }}" width="300" >
+            </p>
+        {% endif %}
+        <h4>{{ devInfo.name }}</h4>
+        <h4>Student, Mail: joy.srijon@gmail.com</h4>
+        <h4>Department of Software Engineering</h4>
+        <h4>Daffodil International University</h4>
+    {% endfor %}
+{% endblock %}
+</body>

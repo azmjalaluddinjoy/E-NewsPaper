@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="contdr-fluid text-center">
+        <ul class="pagination">
+          <li class="previous"><a href="#"><span class="glyphicon glyphicon-arrow-left" ></span> Previous Page</a></li>
+          <li><a href="/home/e_news/e_news01/">1</a></li>
+          <li><a href="/home/e_news/e_news02/">2</a></li>
+          <li><a href="/home/e_news/e_news03/">3</a></li>
+          <li><a href="/home/e_news/e_news04/">4</a></li>
+          <li class="next"><a href="#">Next Page <span class="glyphicon glyphicon-arrow-right" ></span></a></li>
+
+        </ul>
+    </div>
+
+{% for eNewsView in eachNews %}
+ <div class="modal fade" id="enlargeImageModal" tabindex="-1" role="dialog" aria-labelledby="enlargeImageModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content topmodel">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body">
+          <img src="" class="enlargeImageModalSource" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+</div>
+
+    <script>
+    $(function() {
+    	$('.joy').on('click', function() {
+			$('.enlargeImageModalSource').attr('src', $(this).attr('src'));
+			$('#enlargeImageModal').modal('show');
+		});
+        });
+    </script>
+
+    <div class="row topimg">
+
+    <div>
+        <div class="col-md-12">
+          {% if eNewsView.position0 != None %}
+            <img class="joy" src="{{ eNewsView.position0.url }}" width="770">
+          {% endif %}
+        </div>
+    </div>
+    </div>
+    <div class="row allimg">
+    <div>
+        <div class="col-sm-4">
+          {% if eNewsView.position1 != None %}
+            <img class="joy" src="{{ eNewsView.position1.url }}" width="300">
+          {% endif %}
+        </div>
+        <div class="col-sm-4">
+          {% if eNewsView.position2 != None %}
+            <img class="joy" src="{{ eNewsView.position2.url }}" width="300">
+          {% endif %}
+        </div>
+        <div class="col-sm-4">
+            {% if eNewsView.position3 != None %}
+            <img class="joy" src="{{ eNewsView.position3.url }}" width="300">
+          {% endif %}
+
+        </div>
+    </div>
+
+        <div>
+        <div class="col-sm-4">
+          {% if eNewsView.position4 != None %}
+            <img class="joy" src="{{ eNewsView.position4.url }}" width="300">
+          {% endif %}
+
+        </div>
+
+        <div class="col-sm-4">
+
+          {% if eNewsView.position5 != None %}
+            <img class="joy" src="{{ eNewsView.position5.url }}" width="300">
+          {% endif %}
+
+        </div>
+
+        <div class="col-sm-4">
+            {% if eNewsView.position6 != None %}
+            <img class="joy" src="{{ eNewsView.position6.url }}" width="300">
+          {% endif %}
+
+        </div>
+    </div>
+
+
+        <div>
+        <div class="col-sm-4">
+          {% if eNewsView.position7 != None %}
+            <img class="joy" src="{{ eNewsView.position7.url }}" width="300">
+          {% endif %}
+
+        </div>
+
+        <div class="col-sm-4">
+
+          {% if eNewsView.position8 != None %}
+            <img class="joy" src="{{ eNewsView.position8.url }}" width="300">
+          {% endif %}
+
+        </div>
+
+        <div class="col-sm-4">
+           {% if eNewsView.position9 != None %}
+            <img class="joy" src="{{ eNewsView.position9.url }}" width="300">
+          {% endif %}
+
+        </div>
+    </div>
+
+    </div>
+
+
+    {% endfor %}
+{% endblock %}
+
+
+{#THis content is for Right sideBar#}
+
+{% block sideBar %}
+    {% for eNewsView in eachNews %}
+        <p><span class="glyphicon glyphicon-backward"></span> All Pages <span class="glyphicon glyphicon-forward"></span></p>
+                <img src="{{ eNewsView.position3.url }}" width="120">
+        <p> Page 1</p>
+                <img src="{{ eNewsView.position3.url }}" width="120">
+        <p> Page 2</p>
+                        <img src="{{ eNewsView.position3.url }}" width="120">
+        <p> Page 3</p>
+                        <img src="{{ eNewsView.position3.url }}" width="120">
+        <p> Page 4</p>
+                        <img src="{{ eNewsView.position3.url }}" width="120">
+        <p> Page 5</p>
+                        <img src="{{ eNewsView.position3.url }}" width="120">
+        <p> Page 6</p>
+                        <img src="{{ eNewsView.position3.url }}" width="120">
+        <p> Page 7</p>
+                        <img src="{{ eNewsView.position3.url }}" width="120">
+        <p> Page 8</p>
+    {% endfor %}
+{% endblock %}
+

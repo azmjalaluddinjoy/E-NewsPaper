@@ -1,0 +1,282 @@
+<html>
+   <head>
+   {% load staticfiles %}
+       	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>The SoftTech Bangladesh</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+       <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>
+      <link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+       <style>
+           .modal-header, h4, .close {
+      background-color: #5cb85c;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-footer {
+      background-color: #f9f9f9;
+  }
+           footer {
+          background-color: #555;
+          color: white;
+          padding: 15px;
+        }
+       </style>
+   </head>
+   <body>
+      <div class="container">
+         <div class="page-header page-header-custom">
+            <h1 class="text-center">The Soft Tech Bangladesh</h1>
+
+             <p class="text-center" id="currentDate"></p>
+             <script type="text/javascript">
+
+                    document.getElementById("currentDate").innerHTML = Date();
+
+            </script>
+         </div>
+
+      <div class="btn-group">
+
+          <a href="/home/e_news/e_news01/" class="btn btn-success">Home</a>
+          <a href="/home/about/" class="btn btn-success">About</a>
+          <a href="/home/contact/" class="btn btn-success">Contact</a>
+          <a href="/home/developer/" class="btn btn-success">Developer</a>
+
+             <form method="GET" class="navbar-form navbar-left" action="/home/post_list/">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" name="q">
+              </div>
+              <input type="submit" value="Search" class="btn btn-default">
+            </form>
+
+	  	</div>
+
+      <div style="float: right">
+<a href="/home/registration/" class="btn btn-info">
+          <span class="glyphicon glyphicon-home"></span> Hello world
+          </a>
+          <a href="/home/registration/" class="btn btn-info">
+          <span class="glyphicon glyphicon-user"></span> Registration
+          </a>
+          <a href="/home/login/" class="btn btn-info">
+          <span class="glyphicon glyphicon-user"></span> Log In
+          </a>
+
+          <a href="#" class="btn btn-danger">
+          <span class="glyphicon glyphicon-off"></span> Log Out
+          </a>
+{#          <button type="button" action="/registration" class="btn btn-default btn-lg" id="regBtn">Registration</button>#}
+{#          <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>#}
+      </div>
+
+
+
+{#      <!-- Modal Registration-->#}
+{#  <div class="modal fade" id="modalReg" role="dialog">#}
+{#    <div class="modal-dialog">#}
+{##}
+{#      <!-- Modal content-->#}
+{#      <div class="modal-content">#}
+{#        <div class="modal-header" style="padding:35px 50px;">#}
+{#          <button type="button" class="close" data-dismiss="modal">&times;</button>#}
+{#          <h4><span class="glyphicon glyphicon-lock"></span> Registration</h4>#}
+{#        </div>#}
+{#        <div class="modal-body" style="padding:40px 50px;">#}
+{#          <form role="form" method="POST" name="RForm" class="UserForm" action="http://127.0.0.1:8000/home/reg/"> {% csrf_token %}#}
+{#              {{ regiform.as_p }}#}
+{#            <div class="form-group">#}
+{#              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>#}
+{#              <input type="text" class="form-control" id="usrname" placeholder="User Name">#}
+{#            </div>#}
+{#               <div class="form-group">#}
+{#              <label for="usrname"><span class="glyphicon glyphicon-earphone"></span> Phone Number</label>#}
+{#              <input type="text" class="form-control" id="phone" placeholder="Phone (+880 1XXX)">#}
+{#            </div>#}
+{#               <div class="form-group">#}
+{#              <label for="usrname"><span class="glyphicon glyphicon-home"></span> Living Address</label>#}
+{#              <input type="text" class="form-control" id="usrname" placeholder="Enter address">#}
+{#            </div>#}
+{#              <div class="form-group">#}
+{#              <label for="usrname"><span class="glyphicon glyphicon-briefcase"></span> Ocupation</label>#}
+{#              <input type="text" class="form-control" id="occupation" placeholder="Your occupation here">#}
+{#            </div>#}
+{#               <div class="form-group">#}
+{#              <label for="usrname"><span class="glyphicon glyphicon-envelope"></span> Email</label>#}
+{#              <input type="email" class="form-control" id="email" placeholder="Enter email">#}
+{#            </div>#}
+{#            <div class="form-group">#}
+{#              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>#}
+{#              <input type="password" class="form-control" id="psw" placeholder="Enter password">#}
+{#            </div>#}
+{##}
+{#              <input type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Registration</input>#}
+{#          </form>#}
+{#        </div>#}
+{#        <div class="modal-footer">#}
+{#          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>#}
+{##}
+{#        </div>#}
+{#      </div>#}
+{##}
+{#    </div>#}
+{#</div>#}
+
+
+
+
+
+<!-- Modal Login-->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form" method="POST" action="">
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-envelope"></span> Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your registered email">
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input type="text" class="form-control" id="psw" placeholder="Enter password">
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="" checked>Remember me</label>
+            </div>
+              <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+          <p>Forgot <a href="#">Password?</a></p>
+        </div>
+      </div>
+
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal();
+    });
+});
+</script>
+
+      <script>
+$(document).ready(function(){
+    $("#regBtn").click(function(){
+        $("#modalReg").modal();
+    });
+});
+</script>
+
+
+
+
+
+
+
+      <div class="contdr-fluid text-center">
+
+
+
+          <div class="row content">
+            <div class="col-sm-2 sidenav">
+
+             <nav class="navbar navbar-default navbar-fixed-side" style="height: 100%;">
+        <!-- normal collapsible navbar markup -->
+{#                 <form method="GET" action="/home/specify/">#}
+{#                 <h3><a href="{% url 'category' 'education' %}">{{ post.title }}</a></h3>#}
+                 <button type="button" onclick="window.open('/home/e_news/education/')" class="btn btn-primary btn-group-sm btn-block">Education</button>
+                 <button type="button" onclick="window.open('/home/e_news/business/')"  class="btn btn-primary btn-group-sm btn-block">Business</button>
+                 <button type="button" onclick="window.open('/home/e_news/sports/')"  class="btn btn-primary btn-group-sm btn-block">Sports</button>
+                 <button type="button" onclick="window.open('/home/e_news/entertainment/')"  class="btn btn-primary btn-group-sm btn-block">Entertainment</button>
+                 <button type="button" onclick="window.open('/home/e_news/science/')"  class="btn btn-primary btn-group-sm btn-block">Science & Technology</button>
+                 <button type="button" onclick="window.open('/home/e_news/lifestyle/')"  class="btn btn-primary btn-group-sm btn-block">Lifestyle</button>
+                 <button type="button" onclick="window.open('/home/e_news/comics/')"  class="btn btn-primary btn-group-sm btn-block">Comics</button>
+                 <button type="button" onclick="window.open('/home/e_news/cartoons/')"  class="btn btn-primary btn-group-sm btn-block">Cartoons</button>
+                 <button type="button" onclick="window.open('/home/e_news/jobs/')"  class="btn btn-primary btn-group-sm btn-block">Jobs</button>
+                 <button type="button" onclick="window.open('/home/e_news/opinion/')"  class="btn btn-primary btn-group-sm btn-block">Opinions</button>
+                 <button type="button" onclick="window.open('/home/e_news/international/')"  class="btn btn-primary btn-group-sm btn-block">International</button>
+                 <button type="button" onclick="window.open('/home/e_news/circulation/')"  class="btn btn-primary btn-group-sm btn-block">Circulations</button>
+                 <button type="button" onclick="window.open('/home/e_news/advertisements/')"  class="btn btn-primary btn-group-sm btn-block">Advertisement</button>
+                 <!-- Inline CSS based on choices in "Settings" tab -->
+{#                 </form>#}
+                 <script>
+                    function dosomething(element) {
+                      window.log(element.value);
+                    }
+                 </script>
+            </nav>
+
+            </div>
+              <div class="col-sm-8 text-left" >
+{#              <h1>Welcome to E-newsPaper</h1>#}
+{##}
+{#                <h2>All NewsPaper List (Demo)</h2>#}
+         {% block content %}
+         {% endblock %}
+              <hr>
+            </div>
+
+
+            <div class="col-sm-2 sidenav">
+                <div class="well">
+                <p>Call Now for Ad !</p>
+                  <p>+880 1733 xxxxxx</p>
+              </div>
+              <div class="well">
+                  <p>Book for Ad Now</p>
+                  <img src="/media/ad/add02.gif" width="125" >
+{#                  {% block sideBar %}#}
+{#                  {% endblock %}#}
+              </div>
+               <div class="well">
+                  <img src="/media/ad/add01.gif" width="125" >
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+
+
+      <div class="page-footer page-footer-custom" style="background: #d1e4ea; padding: 10px 5px 5px 20px; border-radius: 7px;
+;">
+            <h6 class="text-left">The Soft Tech Bangladesh</h6>
+            <h6 class="text-left"><strong>Editor: </strong><a href="http://faculty.daffodilvarsity.edu.bd/profile/swe/sadia.html"> Farjana Sadia</a></h6>
+            <h6 class="text-left"><strong>Published By: </strong><a href="http://swe.daffodilvarsity.edu.bd/">Department of Software Engineering</a></h6>
+          <a href="https://www.daffodilvarsity.edu.bd/">
+            <h6 class="text-left">Daffodil International University, 102/1 Mirpur Road, Sukrabad, Dhaka-1207</h6>
+          </a>
+            <h6 class="text-left"><strong>Email: </strong>joy.srijon@gmail.com</h6>
+      </div>
+      </div>
+{#<script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>#}
+{#<script type="text/javascript" src="{% static 'js/plugin.js' %}"></script>#}
+{#{% block javascript %}#}
+{##}
+{#{% endblock javascript %}#}
+
+    </body>
+</html>

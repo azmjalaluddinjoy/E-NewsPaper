@@ -1,0 +1,91 @@
+<html>
+<head>
+    <title>
+        Category_Daily SoftTech
+    </title>
+    <style>
+p.double {border-style: double;}
+    </style>
+</head>
+<body>
+
+
+{% extends 'base.html' %}
+   {% block content %}
+      {% for catNewsAll in catNews %}
+{{ num }}
+           <div class="modal fade" id="enlargeImageModal" tabindex="-1" role="dialog" aria-labelledby="enlargeImageModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content topmodel">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body">
+          <img src="" class="enlargeImageModalSource" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+</div>
+
+    <script>
+    $(function() {
+    	$('.joy').on('click', function() {
+			$('.enlargeImageModalSource').attr('src', $(this).attr('src'));
+			$('#enlargeImageModal').modal('show');
+		});
+        });
+    </script>
+
+        {% if catNewsAll.position1 != None %}
+
+            <p class="double">
+            <img class="joy" src="{{ catNewsAll.position1.url }}" width="743">
+            </p>
+        {% endif %}<hr>
+
+
+          {% if catNewsAll.position2 != None %}
+           <p class="double">
+            <img class="joy" src="{{ catNewsAll.position2.url }}" width="743">
+           No 02</p>
+        {% endif %}
+<hr>
+         {% if catNewsAll.position3 != None %}
+             <p class="double">
+            <img class="joy" src="{{ catNewsAll.position3.url }}" width="743">
+             </p>
+        {% endif %}<hr>
+                  {% if catNewsAll.position4 != None %}
+                      <p class="double">
+            <img class="joy" src="{{ catNewsAll.position4.url }}" width="743">
+                      </p>
+        {% endif %}<hr>
+                  {% if catNewsAll.position5 != None %}
+                      <p class="double">
+            <img class="joy" src="{{ catNewsAll.position5.url }}" width="743">
+                      </p>
+        {% endif %}<hr>
+                  {% if catNewsAll.position6 != None %}
+                      <p class="double">
+            <img class="joy" src="{{ catNewsAll.position6.url }}" width="743">
+                      </p>
+        {% endif %}<hr>
+                  {% if catNewsAll.position7 != None %}
+                      <p class="double">
+            <img class="joy" src="{{ catNewsAll.position7.url }}" width="743">
+                      </p>
+        {% endif %}<hr>
+                  {% if catNewsAll.position8 != None %}
+                      <p class="double">
+            <img class="joy" src="{{ catNewsAll.position8.url }}" width="743">
+                      </p>
+        {% endif %}<hr>
+                  {% if catNewsAll.position9 != None %}
+                      <p class="double">
+            <img class="joy" src="{{ catNewsAll.position9.url }}" width="743">
+                      </p>
+        {% endif %}<hr>
+      {% endfor %}
+   {% endblock %}
+</body>
+</html>
