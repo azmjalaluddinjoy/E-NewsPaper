@@ -2,6 +2,7 @@
 
 This is blogpost Django Testing Project (A. Z. M. JALAL UDDIN JOY)
 # E-NewsPaper
+Video Link: https://www.youtube.com/watch?v=kBYsDu1O6i0&t=2s
 
 (Background) 
 Traditionally the newspapers is printed in the news pages and customer buy it. I've have a concept on making it as E-NewsPaper that makes a solution, possible for publishers to effortlessly publish their content in a digital newspaper format.
