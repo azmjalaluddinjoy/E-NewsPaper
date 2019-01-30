@@ -1,6 +1,5 @@
-# blogPostDjango
-
-This is blogpost Django Testing Project (A. Z. M. JALAL UDDIN JOY)
+# E-NewsPaper
+(A. Z. M. JALAL UDDIN JOY)
 # E-NewsPaper
 Video Link: https://www.youtube.com/watch?v=kBYsDu1O6i0&t=2s
 
